@@ -22,9 +22,9 @@ class GameParameters:
     
 @dataclass
 class ScheduleParameters:
-    week: Optional[int]
-    season: Optional[int]
-    team: Optional[str]   
+    week: Optional[int] = None
+    season: Optional[int] = None
+    team: Optional[str] = None
 
     def to_params(self) -> dict[str,str]:
         return {
