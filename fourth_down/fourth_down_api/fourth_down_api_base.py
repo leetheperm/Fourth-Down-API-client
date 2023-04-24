@@ -1,6 +1,7 @@
 from .api_base import ApiBase, ApiRequest
 from .environment import FourthDownEnvironment
 from .parameters import GameParameters, ScheduleParameters
+from typing import Optional
 
 
 class FourthDownApiBase(ApiBase):
@@ -38,7 +39,7 @@ class FourthDownApiBase(ApiBase):
             verbose=verbose
         )
     
-    def _schedule_request(self, parameters: ScheduleParameters, verbose: bool = False) -> ApiRequest:
+    def _schedule_request(self, parameters: Optional[ScheduleParameters], verbose: bool = False) -> ApiRequest:
         return ApiRequest(
             path="/api/schedule",
             params=parameters.to_params(),

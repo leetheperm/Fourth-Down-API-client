@@ -2,7 +2,6 @@ setup.py
 fourth_down_api/__init__.py
 fourth_down_api/api_base.py
 fourth_down_api/api_json.py
-fourth_down_api/auth.py
 fourth_down_api/environment.py
 fourth_down_api/fourth_down_api_base.py
 fourth_down_api/parameters.py
