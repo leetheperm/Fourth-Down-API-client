@@ -9,8 +9,8 @@ from enum import Enum
 class GameParameters:
     game_id: Optional[str] = "2023_01_DAL_LA"
     week: Optional[int] = 1
-    season: Optional[int] = 2023
-    team: Optional[str] = "LAX"
+    season: Optional[int] = 2022
+    team: Optional[str] = "LA"
 
     def to_params(self) -> dict[str,str]:
         return {
@@ -22,9 +22,9 @@ class GameParameters:
     
 @dataclass
 class ScheduleParameters:
-    week: Optional[int] = 1
-    season: Optional[int] = 2023
-    team: Optional[str] = "LAX"
+    week: Optional[int] = None
+    season: Optional[int] = None
+    team: Optional[str] = None
 
     def to_params(self) -> dict[str,str]:
         return {
@@ -36,7 +36,7 @@ class ScheduleParameters:
 @dataclass
 class ResultsParameters:
     team: Optional[str] = "NYJ"
-    opposition: Optional[str] = "LAX"
+    opposition: Optional[str] = "LA"
     game_offset: Optional[int] = 1
     game_type: Optional[str] =  "REG"
 
