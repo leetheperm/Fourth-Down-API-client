@@ -13,22 +13,21 @@ jobs:
         run: $jupyterNotebooks = Get-ChildItem -filter *.ipynb -Recurse
           $problemsFound = 0
           foreach ($notebook in $jupyterNotebooks) {
-            Write-Host "Testing: $($notebook.FullName)"
-            $content = get-content $notebook.FullName | ConvertFrom-Json
+          Write-Host "Testing: $($notebook.FullName)"
+          $content = get-content $notebook.FullName | ConvertFrom-Json
 
-            $outputFields = $content.cells.outputs
-            Write-Host "Output Fields found: $($outputFields.length)"
-            if($outputFields.length -eq 1){
-              Write-Host "Issue: Output field must be reset to null"
-            $problemsFound++
-            }
-            else {
-              $outputFields | 
-            Where-Object -FilterScript { $_ -ne $null } |
-            ForEach-Object { Write-Host "Issue: Output fields must be reset to null"; $problemsFound++ }
-              }
-            }   
-
-            if($problemsFound -gt 0) {
-              Write-Host "##vso[task.logissue type=error]Problems found with Jupyter Notebooks"
+          $outputFields = $content.cells.outputs
+          Write-Host "Output Fields found: $($outputFields.length)"
+          if($outputFields.length -eq 1){
+          Write-Host "Issue: Output field must be reset to null"
+          $problemsFound++
+          }
+          else {
+          $outputFields | 
+          Where-Object -FilterScript { $_ -ne $null } |
+          ForEach-Object { Write-Host "Issue: Output fields must be reset to null"; $problemsFound++ }
+          }
+          }   
+          if($problemsFound -gt 0) {
+          Write-Host "##vso[task.logissue type=error]Problems found with Jupyter Notebooks"
           Exit 1
