@@ -32,7 +32,7 @@ clone this repository and then run  `pip install pip install .\fourth_down\` in 
 | :---       | :---        |    :----:   |         :---: |  :---:
 |Game plays| `/api/game/plays` | Yes &check; | Yes &check;  |No &cross;|
 |Game drives| `api/game/drives`   | No &cross;| Yes  &check;    | No &cross;|
-|Scoreing summaries| `api/game/scoringsummaries` | No &cross; | Yes &check; | No &cross;|
+|Scoring summaries| `api/game/scoringsummaries` | No &cross; | Yes &check; | No &cross;|
 |NFL Fast R| `api/nflfastr`   | No &cross; | No  &cross; | No &cross;|
 |Schedule| `api/schedule`   | No &cross;| Yes  &check;    | No &cross;|
 |Results| `api/schedule/results`   | No &cross; | Yes &check;  | No &cross;|
