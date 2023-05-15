@@ -30,11 +30,11 @@ class TeamFields:
     def from_dict(cls, d: dict):
         return cls(
             city=d["city"],
-            name=d["name"]
-            abbrevation=d["abbrevation"]
-            conference=d["conference"]
-            division=d["division"]
-            label=d["label"]
+            name=d["name"],
+            abbrevation=d["abbrevation"],
+            conference=d["conference"],
+            division=d["division"],
+            label=d["label"],
             team_name_label=d["teamNameLabel"])
     
 
