@@ -10,5 +10,4 @@ setup(
     description="Fourth down API client",
     install_requires=[
         "requests"
-    ]
-)
+    ])

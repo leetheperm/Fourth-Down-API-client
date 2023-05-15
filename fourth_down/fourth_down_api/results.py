@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 
+
 @dataclass
 class GameFields:
     game_id: dict
@@ -9,17 +10,17 @@ class GameFields:
 
     @classmethod
     def from_dict(cls, d: dict):
-        return(cls(
+        return (cls(
             game_id=d["game"],
             home_team=d["homeTeam"],
             visitor_team=d["visitorTeam"],
             plays=d["plays"]
         ))
-    
+
 @dataclass
 class TeamFields:
-    city : str
-    name : str
+    city: str
+    name: str
     abbrevation: str
     conference: str
     division: str
@@ -36,7 +37,7 @@ class TeamFields:
             division=d["division"],
             label=d["label"],
             team_name_label=d["teamNameLabel"])
-    
+
 
 @dataclass
 class ScheduleFields:
@@ -75,5 +76,4 @@ class ScheduleFields:
     referee: str
     stadium_id: str
     stadium: str
-
 
