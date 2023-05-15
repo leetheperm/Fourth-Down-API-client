@@ -26,6 +26,25 @@ clone this repository and then run  `pip install pip install .\fourth_down\` in 
 [Fourth down client demo](/notebooks/fourth_down_demo.ipynb) has examples of how to use this client for data science in a jupyter notebook.
 
 
+### Endpoints supported
+
+| Name| Endpoint     |Python Class | JSON | Pandas Dataframe    |
+| :---       | :---        |    :----:   |         :---: |  :---:
+|Game plays| `/api/game/plays` | Yes &check; | Yes &check;  |No &cross;|
+|Game drives| `api/game/drives`   | No &cross;| Yes  &check;    | No &cross;|
+|Scoreing summaries| `api/game/scoringsummaries` | No &cross; | Yes &check; | No &cross;|
+|NFL Fast R| `api/nflfastr`   | No &cross; | No  &cross; | No &cross;|
+|Schedule| `api/schedule`   | No &cross;| Yes  &check;    | No &cross;|
+|Results| `api/schedule/results`   | No &cross; | Yes &check;  | No &cross;|
+|Teams| `api/teams`   | Yes &check;| Yes  &check; | No &cross;|
+
+### Future improvements
+
+- [ ] Add data frames / pandas support
+- [x] Add plots
+- [x] Handle non 200 responses
+
+
 ### Contributors
 - Titusz https://github.com/tituszban
 - Lee https://github.com/leetheperm/
