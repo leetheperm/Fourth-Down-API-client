@@ -17,6 +17,7 @@ class GameFields:
             plays=d["plays"]
         ))
 
+
 @dataclass
 class TeamFields:
     city: str
@@ -76,4 +77,3 @@ class ScheduleFields:
     referee: str
     stadium_id: str
     stadium: str
-

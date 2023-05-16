@@ -17,10 +17,10 @@ class ApiBase:
             self._endpoint: str = endpoint.value
         else:
             self._endpoint: str = endpoint.strip().lstrip("/")
-        self.headers = headers    
+        self.headers = headers
 
     def _get(self, request: ApiRequest) -> str:
-        start_time = perf_counter()   
+        start_time = perf_counter()
         r = requests.get(
             f"{self._endpoint}/{request.path.lstrip('/')}",
             params=request.params,
@@ -34,7 +34,7 @@ class ApiBase:
             return r.text
 
     def _get_without_params(self, request: ApiRequest) -> str:
-        start_time = perf_counter()   
+        start_time = perf_counter()
         r = requests.get(
             f"{self._endpoint}/{request.path.lstrip('/')}",
             headers={**request.headers})
@@ -45,4 +45,3 @@ class ApiBase:
             print(f"Status: {r.status_code}")
             r.raise_for_status()
             return r.text
-

@@ -1,6 +1,7 @@
 # Fourth down API client and data science helper
 
 **![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/leetheperm/Forth-Down-API-client/python-package.yml)**
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/leetheperm/Forth-Down-API-client)
 
 A python wrapper for the Fourth down play-by-play API written by Pratik Thanki
 
@@ -41,8 +42,8 @@ clone this repository and then run  `pip install pip install .\fourth_down\` in 
 ### Future improvements
 
 - [ ] Add data frames / pandas support
-- [x] Add plots
-- [x] Handle non 200 responses
+- [ ] Add plots
+- [ ] Handle non 200 responses
 
 
 ### Contributors
