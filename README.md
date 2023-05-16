@@ -42,8 +42,8 @@ clone this repository and then run  `pip install pip install .\fourth_down\` in 
 ### Future improvements
 
 - [ ] Add data frames / pandas support
-- [x] Add plots
-- [x] Handle non 200 responses
+- [ ] Add plots
+- [ ] Handle non 200 responses
 
 
 ### Contributors
