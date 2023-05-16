@@ -2,6 +2,7 @@
 
 **![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/leetheperm/Forth-Down-API-client/python-package.yml)**
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/leetheperm/Forth-Down-API-client)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/requests)
 
 A python wrapper for the Fourth down play-by-play API written by Pratik Thanki
 
