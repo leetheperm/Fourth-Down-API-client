@@ -1,9 +1,10 @@
 from .environment import FourthDownEnvironment
-from dataclasses import field
+from dataclasses import dataclass, field
 from time import perf_counter
 import requests
 
 
+@dataclass
 class ApiRequest:
     path: str
     params: dict = field(default_factory=dict)
@@ -33,15 +34,3 @@ class ApiBase:
             r.raise_for_status()
             return r.text
 
-    def _get_without_params(self, request: ApiRequest) -> str:
-        start_time = perf_counter()
-        r = requests.get(
-            f"{self._endpoint}/{request.path.lstrip('/')}",
-            headers={**request.headers})
-        duration = perf_counter() - start_time
-        if request.verbose:
-            print(f"Request url: {r.url}")
-            print(f"Duration: {duration:.3f}s")
-            print(f"Status: {r.status_code}")
-            r.raise_for_status()
-            return r.text

@@ -15,7 +15,7 @@ class ForthDownApiJson(FourthDownApiBase):
         return self._get(self._game_scores_request(parameters, verbose))
 
     def all_teams(self, verbose: bool = False):
-        return self._get_without_params(self._all_teams_request(verbose))
+        return self._get(self._all_teams_request(verbose))
 
     def schedule(self, parameters: ScheduleParameters = {}, verbose: bool = False):
         return self._get(self._schedule_request(parameters, verbose))
