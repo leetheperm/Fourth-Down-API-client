@@ -7,7 +7,7 @@ import pytest
 @pytest.fixture
 def get_teams_request():
     # Arrange
-    sut = ForthDownApiJson(endpoint=FourthDownEnvironment.local)
+    sut = ForthDownApiJson(endpoint=FourthDownEnvironment.test)
     base = FourthDownApiBase
 
     # Act
@@ -18,11 +18,9 @@ def get_teams_request():
 
 # Assert
 def test_params_are_empty_for_team_request(get_teams_request):
-    response = get_teams_request()
-    assert response.params == {}
+
+    assert get_teams_request.params == {}
 
 
 def test_path_is_correct_for_team_request(get_teams_request):
-    response = get_teams_request()
-    assert response.params == {}
-
+    assert get_teams_request.path == "/api/teams"
