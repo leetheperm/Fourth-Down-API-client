@@ -6,15 +6,19 @@ import pytest
 
 @pytest.fixture
 def get_teams_request():
-    sut = ForthDownApiJson(endpoint=FourthDownEnvironment.production)
+    # Arrange
+    sut = ForthDownApiJson(endpoint=FourthDownEnvironment.test)
     base = FourthDownApiBase
 
+    # Act
     req = sut._all_teams_request(base._all_teams_request)
 
     return req
 
 
+# Assert
 def test_params_are_empty_for_team_request(get_teams_request):
+
     assert get_teams_request.params == {}
 
 
