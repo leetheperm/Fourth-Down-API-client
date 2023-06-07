@@ -18,8 +18,6 @@ jobs:
     strategy:
       fail-fast: false
     defaults:
-      run:
-        working-directory: .github/workflows
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
