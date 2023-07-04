@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class GameFields:
+class GamePlayFields:
     game_id: dict
     home_team: dict
     visitor_team: dict
@@ -15,6 +15,22 @@ class GameFields:
             home_team=d["homeTeam"],
             visitor_team=d["visitorTeam"],
             plays=d["plays"]
+        ))
+    
+@dataclass
+class ScoringSummariesFields:
+    game_id: dict
+    home_team: dict
+    visitor_team: dict
+    scoring_summaries: list[dict]
+
+    @classmethod 
+    def from_dict(cls, d: dict):
+        return (cls(
+            game_id=d["game"],
+            home_team=d["homeTeam"],
+            visitor_team=d["visitorTeam"],
+            scoring_summaries=d["scoringSummaries"]
         ))
 
 
@@ -77,3 +93,58 @@ class ScheduleFields:
     referee: str
     stadium_id: str
     stadium: str
+
+    @classmethod
+    def from_dict(cls, d: dict):
+        return cls(
+                game_id=d["game"],
+                season=d["season"],
+                game_type=d["gameType"],
+                week=d["week"],
+                game_day=d["gameday"],
+                week_day=d["weekday"],
+                game_time=d["gametime"],
+                away_team=d["awayTeam"],
+                home_team=d["homeTeam"],
+                home_score=d["homeScore"],
+                location=d["location"],
+                result=d["result"],
+                total=d["total"],
+                over_time=d["overtime"],
+                old_game_id=d["oldGameId"],
+                away_rest=d["awayRest"],
+                home_rest=d["homeRest"],
+                away_money_line=d["awayMoneyLine"],
+                home_money_line=d["homeMoneyLine"],
+                spread_line=d["spreadLine"],
+                away_spread_odds=d["awaySpreadOdds"],
+                home_spread_odds=d["homeSpreadOdds"],
+                total_line=d["totalLine"],
+                under_odds=d["underOdds"],
+                over_odds=d["overOdds"],
+                div_game=d["divGame"],
+                roof=d["roof"],
+                surface=d["surface"],
+                temp=d["temp"],
+                wind=d["wind"],
+                away_coach=d["awayCoach"],
+                home_coach=d["homeCoach"],
+                referee=d["refree"],
+                stadium_id=d["stadiumId"],
+                stadium=d["stadium"]
+            )
+
+
+@dataclass
+class ErrorFields:
+    title: str
+    status_code: int
+    errors: dict
+
+    @classmethod
+    def from_dict(cls, d: dict):
+        return (cls(
+            title=d["title"],
+            status_code=d["status"],
+            errors=d.get("errors")
+        ))
