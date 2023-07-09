@@ -1,4 +1,5 @@
 from .api_base import ApiBase, ApiRequest
+from .api_json import ForthDownApiJson
 from .environment import FourthDownEnvironment
 from .parameters import GameParameters, ScheduleParameters
 from typing import Optional
@@ -8,6 +9,11 @@ class FourthDownApiBase(ApiBase):
 
     def __init__(self, endpoint: FourthDownEnvironment, headers: dict[str, str] = {}) -> None:
         super().__init__(endpoint, headers)
+        self._json_api = ForthDownApiJson(endpoint, headers)
+
+    @property
+    def json(self):
+        return self._json_api
 
     def _game_plays_request(self, parameters: GameParameters, verbose: bool = False) -> ApiRequest:
         return ApiRequest(
